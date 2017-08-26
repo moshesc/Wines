@@ -1,0 +1,136 @@
+﻿@model Wines.Models.Wine
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Wine</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Country)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Country)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WineByRegion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WineByRegion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Grape1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Grape1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WineByStopper)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WineByStopper)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WineByName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WineByName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vintage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vintage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Producer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Producer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ABV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ABV)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.GoWellWith)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.GoWellWith)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TestingNote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TestingNote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WineImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WineImage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.FoodImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.FoodImage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RegionImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RegionImage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CountryImage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CountryImage)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

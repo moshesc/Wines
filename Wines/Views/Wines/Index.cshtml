@@ -1,0 +1,78 @@
+﻿@model IEnumerable<Wines.Models.Wine>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@*<h2>Index</h2>*@
+
+<p>
+   
+    @*@Html.ActionLink("Create New", "Create")*@
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-success" })
+    @using (Html.BeginForm())
+    {
+    <p>
+        
+        Country: @Html.DropDownList("wineByCountry" @*"All"*@,null,new { @class = "btn btn-secondary btn-lg dropdown-toggle" })
+        @*Wine: @Html.TextBox("SearchString") <br />*@
+        <input type="submit" value="Filter" />
+    </p>
+    
+    }
+    
+</p>
+<hr />
+<br />
+<ul class="list-group"></ul>
+<ul class="list-group">
+    <li>
+        @foreach (var item in Model)
+        {
+            <a href="@Url.Action("Details", new { id = item.ID })"></a>
+                <div class="row">
+                    <div class="col-sm-3 col-md-3">@*<a href="@Url.Action("Details", new { id = item.ID })">*@<img src="@Url.Content(item.WineImage)" height="200" />@*</a>*@</div>
+
+                    <div class="col-sm-3 col-md-3">
+
+
+                        <h4><b><i>@Html.DisplayFor(modelItem => item.WineByName)</i></b></h4>
+                        <br />
+                        <p><i>@Html.DisplayFor(modelItem => item.TestingNote)</i></p>
+
+                    </div>
+                    <div class="col-sm-3 col-md-3">@*<img src="@Url.Content(item.CountryImage)" class="img-thumbnail" height="200" />*@</div>
+                    <div class="col-sm-3 col-md-3">
+                        <a href="@Url.Action("Edit", new { id = item.ID })">
+                            <i class="btn btn-success">Edit</i>
+                            <span class="sr-only">Edit</span>
+                        </a>
+                        @*@Html.ActionLink("Edit", "Edit", new { id = item.ID })*@ |
+                        <a href="@Url.Action("Details", new { id = item.ID })">
+                            <i class="btn btn-primary">Details</i>
+                            <span class="sr-only">Details</span>
+                        </a>
+                        @*@Html.ActionLink("Details", "Details", new { id = item.ID }) |*@ |
+
+                        @*@Html.ActionLink("Delete", "Delete", new { id = item.ID })*@
+                        <a href="@Url.Action("Delete", new { id = item.ID })">
+                            <i class="btn btn-danger">Delete</i>
+                            <span class="sr-only">Delete</span>
+                        </a>
+                    </div>
+                </div>
+            
+                    <hr class="" />
+        }
+    </li>
+</ul>
+
+@*<a href="@Url.Action("Edit", new { id =  })">
+    <i class="glyphicon glyphicon-pencil"></i>
+    <span class="sr-only">Edit</span>
+</a>*@

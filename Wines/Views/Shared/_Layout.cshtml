@@ -8,7 +8,82 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    
+        <div class="container">
+            @*<header style="height:80px;"></header>*@
+            <!------------- Navbar -------------->
+            <nav class="navbar navbar-inverse bs-dark">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    
+                    <a class="navbar-brand" href="#"><img src="https://www.brandeps.com/icon-download/W/Wine-bottle-01.svg" style="height:50px; width:50px;" /></a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="bs-dark" style="color:#2fa4e7;font-size:medium;font-weight:600;"><a href="#">Moshe Cellar<span class="sr-only"></span></a></li>
+                        <li class="bs-dark" style="color:#2fa4e7;font-size:medium;font-weight:600;"><a href="/Home/Index">Homepage <span class="sr-only">(current)</span></a></li>
+                        <li class="bs-dark" style="color:#2fa4e7;font-size:medium;font-weight:600;"><a href="/Wines/Index">Wines <span class="sr-only">(current)</span></a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Explores <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="/Wines/Details/1">Castillo San Lorenzo Rioja Reserva</a></li>
+                                <li><a href="/Wines/Details/2">Calvet Prestige Bordeaux</a></li>
+                                <li><a href="/Wines/Details/3">Yellow Tail Shiraz</a></li>
+                                <li><a href="/Wines/Details/4">Ogio Primitivo</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="/Wines/Details/5">Kumala Pinotage Shiraz</a></li>
+                                <li><a href="/Wines/Details/6">Turner Road Reserve Merlot</a></li>
+                                <li><a href="/Wines/Details/7">Isla Negra Seashore Cabernet Sauvignon</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="/Wines/Details/8">Oyster Bay Merlot, Hawkes Bay</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <form class="navbar-form navbar-left form-horizontal" role="search">
+                        <div class="input-group">
+                            <input type="text" class="search-box" placeholder="Search" name="searchString">
+                            <button type="submit" class="btn"><span class="glyphicon glyphicon-search"></span></button>
+                        </div>
+                    </form>
+                    @*<ul class="nav navbar-nav navbar-right">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle navbar-img" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                Account
+                                <img src="http://placehold.it/150x150" class="img-circle" alt="Profile Image" />
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Profile</a></li>
+                                <li><a href="#">Inbox</a></li>
+                                <li><a href="#">Followers</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a href="#">Settings</a></li>
+                            </ul>
+                        </li>
+                    </ul>*@
+                </div>
+            </nav>
+            <!----------- !Navbar End ------------>
+           
+           
+        </div>
+
+        @*<nav class="navbar navbar-light" style="border-color: dimgray;  background-color:#313131;">
+            <div class="container">
+                <a class="navbar-brand" href="/Home/Index">Home</a>
+                <ul class="nav navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/Wines/Index">My Celler <span class="sr-only">(current)</span></a>
+                    </li>
+                </ul>
+            </div>
+        </nav>*@
+    
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -22,17 +97,78 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Wine", "Index", "Wines")</li>
                 </ul>
             </div>
         </div>
-    </div>
+    </div>*@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+        
+            <footer class="footer-distributed">
+
+                <div class="footer-left">
+
+                    <h3>Moshe<span>Cellar</span></h3>
+
+                    <p class="footer-links">
+                        <a href="~/Views/Home/Index.cshtml">Home</a>
+                        ·
+                        @*<a href="#">Blog</a>*@
+                        @*·*@
+                        @*<a href="#">Pricing</a>*@
+                        @*·*@
+                        <a href="~/Views/Home/About.cshtml">About</a>
+                        ·
+                        @*<a href="#">Faq</a>*@
+                        @*·*@
+                        @*<a href="#">Contact</a>*@
+                    </p>
+
+                    @*<p class="footer-company-name">Company Name &copy; 2015</p>*@
+                </div>
+
+                <div class="footer-center">
+
+                    <div>
+                        <i class="fa fa-map-marker"><img src="https://d30y9cdsu7xlg0.cloudfront.net/png/11205-200.png" style="height:35px; width:35px;" /></i>
+                        <p><span>Edgware</span> London, UK</p>
+                    </div>
+
+                    <div>
+                        <i class="fa fa-phone"><img src="http://srishti.payhind.com/wp-content/uploads/2016/12/phone.png" style="height:35px; width:35px;" /></i>
+                        <p>+44 020 123456</p>
+                    </div>
+
+                    <div>
+                        <i class="fa fa-envelope"><img src="http://static.wixstatic.com/media/66db87_1d8260268bc044259445327714128691~mv2.png" style="height:35px; width:35px;" /></i>
+                        <p><a href="mailto:support@company.com">support@company.com</a></p>
+                    </div>
+
+                </div>
+
+                <div class="footer-right">
+
+                    <p class="footer-company-about">
+                        <span>About the company</span>
+                        This is a demonstration website and isn't intended to provide accurate inforamtion about the wines.
+                    </p>
+
+                    <div class="footer-icons">
+
+                        @*<a href="#"><i class="fa fa-facebook"></i><img src="https://image.freepik.com/free-icon/facebook-logo_318-49940.jpg" style="height:35px; width:35px;" /></a>
+                        <a href="#"><i class="fa fa-twitter"></i><img src="https://image.freepik.com/free-icon/twitter-logo_318-40459.jpg" style="height:35px; width:35px;" /></a>*@
+                        <a href="https://www.linkedin.com/in/moshe-scemes-37943784/"><i class="fa fa-linkedin"></i><img src="http://www.cchem.berkeley.edu/dtlgrp/linkedin.png" style="height:35px; width:35px;" /></a>
+                        <a href="https://github.com/moshesc"><i class="fa fa-github"></i><img src="https://image.flaticon.com/icons/svg/25/25231.svg"style="height:35px; width:35px;" /></a>
+
+                    </div>
+
+                </div>
+
+            </footer>
+
+       
     </div>
 
     @Scripts.Render("~/bundles/jquery")

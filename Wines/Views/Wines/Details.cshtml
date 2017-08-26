@@ -1,0 +1,127 @@
+﻿@model Wines.Models.Wine
+
+@{
+    ViewBag.Title = "Details"
+    ;
+}
+
+@*<h2>Details</h2>*@
+
+<div class="container-fluid">
+    @*Heading and flag*@
+    <div class="row">
+        @*Heading and flag*@
+        <div class="col-sm-1 col-md-2"></div>
+        <div class="col-sm-10 col-md-8"></div>
+        <h2 style="color:#2fa4e7;text-align:center;font-family:proxima-nova" ,Helvetica,Arial,sans-serif;">@Html.DisplayFor(model => model.WineByName) <img src="@Url.Content(Model.CountryImage)" height="20" /></h2>
+
+
+        <div class="col-sm-1 col-md-2"></div>
+
+        @*End Of Heading and flag*@
+    </div>
+    <hr />
+    @*Details*@
+    <div class="container">
+        <div class="col-sm-1 col-md-2"></div>
+        <div class="col-sm-5 col-md-4">
+            <img src="@Url.Content(Model.WineImage)" height="250" style="position:center" ; /><br />
+            @*<img src="https://www.tanners-wines.co.uk/media/gene-cms/t/w/twitter-icon_1_1.svg" style="color:#2fa4e7;" />
+            <img src="https://www.tanners-wines.co.uk/static/version1487254591/frontend/Tanners/default/en_GB/images/facebook-icon.svg" style="color:#2fa4e7;" />
+            <img src="https://www.tanners-wines.co.uk/static/version1487254591/frontend/Tanners/default/en_GB/images/pinterest-icon.svg" style="color:#2fa4e7;" />*@
+        </div>
+        <div class="col-sm-4 col-md-4">
+            <div class="container">
+                <div class="box" style="width:350px; height:100px; border:1px thin;line-height:2; font-family:adobe-garamond-pro,Georgia,'Times New Roman',Times,serif" ;>
+                    @*<h3>Testing Note</h3>*@
+                    <p>
+                        <i style="font-size:larger"> @Html.DisplayFor(model => model.TestingNote)</i>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-1 col-md-2"></div>
+
+    </div>
+    <hr />
+    @*End of Details*@
+    @*Foodimage,ReigonImage*@
+    <div class="container-fluid">
+        <div class="col-sm-2 col-md-4">
+            <img src="@Url.Content(Model.FoodImage)" style="width:300px; height:212px; " />
+        </div>
+        <div class="col-sm-2 col-md-4">
+            <img src="@Url.Content(Model.RegionImage)" style="width:300px; height:212px; " />
+        </div>
+
+        <div class="col-sm-5 col-md-4">
+            <div class="container" style="background:#f1f0ec;width:auto; padding:5px; line-height:1.3;font-family:adobe-garamond-pro,Georgia,'Times New Roman',Times,serif; ">
+                <dl class="dl-horizontal">
+                    <dt class="">
+                        <i> @Html.DisplayNameFor(model => model.Country)</i>
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Country)
+                    </dd>
+                    <dt>
+                        Grape
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Grape1)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Producer)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.Producer)
+                    </dd>
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ABV)
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.ABV)
+                    </dd>
+                    <dt>
+                        Region
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.WineByRegion)
+                    </dd>
+                    <dt>
+                        Goes Well With
+                    </dt>
+                    <dd>
+                        @Html.DisplayFor(model => model.GoWellWith)
+                    </dd>
+
+                </dl>
+            </div>
+        </div>
+        @*<div class="col-sm-2 col-md-2"></div>*@
+
+
+
+
+
+    </div>
+    <hr />
+    @* End of Foodimage,ReigonImage*@
+</div>
+@*Footer*@
+<div class="container">
+    <div class="col-sm-2 col-md-2"></div>
+    <div class="col-sm-2 col-md-2">
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+
+    <div class="col-sm-8 col-md-8">
+
+    </div>
+
+</div>
+@*End of Footer*@
+
+
